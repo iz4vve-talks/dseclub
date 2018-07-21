@@ -1,15 +1,44 @@
 #+theme=optum
 Clustering timeseries
-Pietro Mascolo - DSE meetup - Dublin
+Data Science and Engineering Club - Dublin
 10 Jul 2018
 Tags: optum, europython, python, 2018
 
-Pietro Mascolo - *@iz4vve*
+Pietro Mascolo
 Sr. Data Scientist, Optum Ireland
-iz4vve@gmail.com / pietro_mascolo@optum.com
+@iz4vve
+iz4vve@gmail.com
 
 
+###############################################################
+#* Contents
+* I'm going to:
 
+
+.html code/html/spacer.html
+.html code/html/math.html
+
+
+- introduce myself;
+- tell a story;
+- show you some gifs and memes;
+- show you some code;
+- show you some results.
+
+: I want to make sure that you're all in the right room :)
+: An intermediate understanding of statistics and data handling will be VERY useful in following the talk.
+
+###############################################################
+* Me
+
+.image imgs/just-me.png 180 _
+- Physicist;
+- *Python* / *Go* enthusiast;
+- *Kotlin* / Scala practitioner;
+- Ham Radio Operator (*IZ4VVE*);
+- Mountain hiker and Karateka;
+- Amateur Photographer;
+- ...
 
 
 ###############################################################
@@ -20,18 +49,19 @@ iz4vve@gmail.com / pietro_mascolo@optum.com
 
 
 * The problem
+.html code/html/spacer.html
 
 - Lots of timeseries (200);
 - Are there similar groups?;
-- If so, are they related to reality?
+- If so, what do they represent?
 
 
 ###############################################################
 
 * EDA
 
-.html code/spacer.html
-.html code/spacer.html
+.html code/html/spacer.html
+.html code/html/spacer.html
 
 .play code/data.py /START OMIT/,/END OMIT/
 
@@ -41,11 +71,61 @@ iz4vve@gmail.com / pietro_mascolo@optum.com
 
 * What was tried
 
-* Summary statistics + PCA
+* Summary statistics
+
+.image imgs/summary.png _ 600
+
+.image imgs/summary_distributions.png 330 630
+
+* PCA 1/2
+
+Variance:
+$$Var(A) = \frac{\left( (a_1 - \mu_A)^2 + ... + (a_n - \mu_A)^2 \right)}{n-1} $$
+
+Covariance:
+
+$$Cov(A, B) = \frac{\left( (a_1 - \mu_A)^2 + (b_1 - \mu_B)^2 + ... +  (a_n - \mu_A)^2 + (b_n - \mu_B)^2 \right)}{n-1}  $$
+
+: Mathematical representation to maximize variance
+: we need to determine how components vary with each other
+: so: covariance
+
+* PCA 2/2
+Let B be a `m`x`n` matrix whose `i-th` column is x(i) - μ.
+We can define the covariance matrix as:
+
+$$S = \frac{1}{n-1}BB^T$$
+
+S is a symmetric matrix, therefore it can be othogonally diagonalized.
+
+Let:
+
+$$\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_n \geq 0$$
+
+be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors.
+
+
+
+
+###############################################################
+
+* Representation
+
+.image imgs/pca.png _ 800
+
+* Principal components composition
+
+.image imgs/pc_components.png _ 800
+
+* Statistics + PCA + KMeans
 
 .image imgs/kmeans_pca _ 800
 
-#: number of clusters obtained by examining silhouette coefficient
+
+###############################################################
+
+
+: number of clusters obtained by examining silhouette coefficient
 
 * Summary statistics + PCA: series
 
@@ -55,7 +135,15 @@ iz4vve@gmail.com / pietro_mascolo@optum.com
 
 * Seasonality
 
+* Definition
+
+* Seasonality analysis
+
 .image imgs/seasonality _ 800
+
+* Seasonality + PCA - PC composition
+
+.image imgs/pca_Components.png _ 800
 
 
 * Timeseries KMeans
@@ -75,6 +163,9 @@ iz4vve@gmail.com / pietro_mascolo@optum.com
 
 
 * What worked really well
+
+* Fourier analysis
+$$S_N = A_0$$
 
 * Frequency domain analysis
 

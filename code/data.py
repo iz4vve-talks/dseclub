@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-data_file = "/Users/pmascolo/Projects/personal/dseclub-clustering/data/time_series_bonds.xlsx"
+data_file = "/home/iz4vve/Projects/personal/dseclub-clustering/data/time_series_bonds.xlsx"
 sheet_name = "d"
 index = "date"
 
