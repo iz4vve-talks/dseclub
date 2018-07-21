@@ -1,0 +1,99 @@
+#+theme=optum
+Clustering timeseries
+Pietro Mascolo - DSE meetup - Dublin
+10 Jul 2018
+Tags: optum, europython, python, 2018
+
+Pietro Mascolo - *@iz4vve*
+Sr. Data Scientist, Optum Ireland
+iz4vve@gmail.com / pietro_mascolo@optum.com
+
+
+
+
+
+###############################################################
+* Optum / UHG
+
+.image imgs/optum-mission.png 500 _
+.caption [[http://www.optum.com][optum.com]], [[http://www.unitedhealthgroup.com][unitedhealthgroup.com]]
+
+
+* The problem
+
+- Lots of timeseries (200);
+- Are there similar groups?;
+- If so, are they related to reality?
+
+
+###############################################################
+
+* EDA
+
+.html code/spacer.html
+.html code/spacer.html
+
+.play code/data.py /START OMIT/,/END OMIT/
+
+
+
+###############################################################
+
+* What was tried
+
+* Summary statistics + PCA
+
+.image imgs/kmeans_pca _ 800
+
+#: number of clusters obtained by examining silhouette coefficient
+
+* Summary statistics + PCA: series
+
+.image imgs/kmeans_pca_trends _ 800
+
+
+
+* Seasonality
+
+.image imgs/seasonality _ 800
+
+
+* Timeseries KMeans
+
+.image imgs/clustering_kmeans_timeseries _ 800
+
+
+
+* Density based algorithms on PC
+
+.image imgs/dbscan _ 800
+
+* Mixture models on PC
+
+.image imgs/gmm _ 800
+
+
+
+* What worked really well
+
+* Frequency domain analysis
+
+.image imgs/spectra _ 800
+
+* Hierarchical clustering
+
+.image imgs/dendrogram _ 800
+
+* A cluster
+
+.image imgs/clusters_frequence _ 800
+
+
+###############################################################
+* Conclusion
+
+
+
+###############################################################
+* Q/A
+.image imgs/qa.png 500 _
