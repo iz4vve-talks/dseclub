@@ -5,55 +5,19 @@ Data Science and Engineering Club - Dublin
 Tags: optum, europython, python, 2018
 
 Pietro Mascolo
-Sr. Data Scientist, Optum Ireland
 @iz4vve
 iz4vve@gmail.com
 
 
-###############################################################
-#* Contents
-* I'm going to:
-
-
-.html code/html/spacer.html
-.html code/html/math.html
-
-
-- introduce myself;
-- tell a story;
-- show you some gifs and memes;
-- show you some code;
-- show you some results.
-
-: I want to make sure that you're all in the right room :)
-: An intermediate understanding of statistics and data handling will be VERY useful in following the talk.
-
-###############################################################
-* Me
-
-.image imgs/just-me.png 180 _
-- Physicist;
-- *Python* / *Go* enthusiast;
-- *Kotlin* / Scala practitioner;
-- Ham Radio Operator (*IZ4VVE*);
-- Mountain hiker and Karateka;
-- Amateur Photographer;
-- ...
-
-
-###############################################################
-* Optum / UHG
-
-.image imgs/optum-mission.png 500 _
-.caption [[http://www.optum.com][optum.com]], [[http://www.unitedhealthgroup.com][unitedhealthgroup.com]]
-
-
 * The problem
 .html code/html/spacer.html
+.html code/html/math.html
 
 - Lots of timeseries (200);
 - Are there similar groups?;
 - If so, what do they represent?
+
+
 
 
 ###############################################################
@@ -73,9 +37,9 @@ iz4vve@gmail.com
 
 * Summary statistics
 
-.image imgs/summary.png _ 600
+.image imgs/summary.png _ 500
 
-.image imgs/summary_distributions.png 330 630
+.image imgs/summary_distributions.png 330 600
 
 * PCA 1/2
 
@@ -86,9 +50,9 @@ Covariance:
 
 $$Cov(A, B) = \frac{\left( (a_1 - \mu_A)^2 + (b_1 - \mu_B)^2 + ... +  (a_n - \mu_A)^2 + (b_n - \mu_B)^2 \right)}{n-1}  $$
 
-: Mathematical representation to maximize variance
-: we need to determine how components vary with each other
-: so: covariance
+#: Mathematical representation to maximize variance
+#: we need to determine how components vary with each other
+#: so: covariance
 
 * PCA 2/2
 Let B be a `m`x`n` matrix whose `i-th` column is x(i) - μ.
@@ -125,7 +89,7 @@ be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors
 ###############################################################
 
 
-: number of clusters obtained by examining silhouette coefficient
+#: number of clusters obtained by examining silhouette coefficient
 
 * Summary statistics + PCA: series
 
@@ -136,6 +100,13 @@ be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors
 * Seasonality
 
 * Definition
+
+A timeseries can be represented as the combination of three signals: Trend, Seasonality, and Residuals.
+
+*Two*types*of*models*:
+
+- Additive: $$Y(t) = Trend + Seasonality + Residuals$$
+- Multiplicative: $$Y(t) = Trend \times Seasonality \times Residuals$$
 
 * Seasonality analysis
 
@@ -165,7 +136,12 @@ be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors
 * What worked really well
 
 * Fourier analysis
-$$S_N = A_0$$
+
+Periodic signals* can be represented as a(n in)finite sum of harmonics. 
+
+$$S_N = A_0 + \sum_{n=1}^{N} A_n \, \sin \left( \frac{2\pi n x}{P} +\phi_n \right)$$
+
+.image imgs/fourier.gif _ 300
 
 * Frequency domain analysis
 
