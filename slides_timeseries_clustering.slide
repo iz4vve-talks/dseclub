@@ -8,7 +8,6 @@ Pietro Mascolo
 @iz4vve
 iz4vve@gmail.com
 
-
 * The problem
 .html code/html/spacer.html
 .html code/html/math.html
@@ -16,9 +15,6 @@ iz4vve@gmail.com
 - Lots of timeseries (200);
 - Are there similar groups?;
 - If so, what do they represent?
-
-
-
 
 ###############################################################
 
@@ -29,8 +25,6 @@ iz4vve@gmail.com
 
 .play code/data.py /START OMIT/,/END OMIT/
 
-
-
 ###############################################################
 
 * What was tried
@@ -40,6 +34,8 @@ iz4vve@gmail.com
 .image imgs/summary.png _ 500
 
 .image imgs/summary_distributions.png 330 600
+
+###############################################################
 
 * PCA 1/2
 
@@ -69,8 +65,6 @@ $$\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_n \geq 0$$
 be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors.
 
 
-
-
 ###############################################################
 
 * Representation
@@ -96,6 +90,7 @@ be the set of eigenvalues of S, with {u(n)} as set of corresponding eigenvectors
 .image imgs/kmeans_pca_trends _ 800
 
 
+###############################################################
 
 * Seasonality
 
@@ -117,7 +112,17 @@ A timeseries can be represented as the combination of three signals: Trend, Seas
 .image imgs/pca_Components.png _ 800
 
 
-* Timeseries KMeans
+###############################################################
+
+
+* Timeseries KMeans using DTW
+
+.html code/html/spacer.html
+.image imgs/dtw.jpg _ 750
+.caption Euclidean distance vs. DTW
+
+
+* Clustering results
 
 .image imgs/clustering_kmeans_timeseries _ 800
 
@@ -139,7 +144,7 @@ A timeseries can be represented as the combination of three signals: Trend, Seas
 
 Periodic signals* can be represented as a(n in)finite sum of harmonics. 
 
-$$S_N = A_0 + \sum_{n=1}^{N} A_n \, \sin \left( \frac{2\pi n x}{P} +\phi_n \right)$$
+$$S_N = A_0 + \sum_{n=1}^{\infty} a_n \, \cos \left( n x\right) + \sum_{n=1}^{\infty} b_n \, \sin \left( n x\right)$$
 
 .image imgs/fourier.gif _ 300
 
@@ -154,11 +159,6 @@ $$S_N = A_0 + \sum_{n=1}^{N} A_n \, \sin \left( \frac{2\pi n x}{P} +\phi_n \righ
 * A cluster
 
 .image imgs/clusters_frequence _ 800
-
-
-###############################################################
-* Conclusion
-
 
 
 ###############################################################
