@@ -1,7 +1,7 @@
 #+theme=optum
 Clustering timeseries
 Data Science and Engineering Club - Dublin
-10 Jul 2018
+11 Aug 2018
 Tags: optum, europython, python, 2018
 
 Pietro Mascolo
@@ -142,11 +142,16 @@ A timeseries can be represented as the combination of three signals: Trend, Seas
 
 * Fourier analysis
 
-Periodic signals* can be represented as a(n in)finite sum of harmonics. 
+Periodic signals* can be represented as the sum of harmonics. 
 
-$$S_N = A_0 + \sum_{n=1}^{\infty} a_n \, \cos \left( n x\right) + \sum_{n=1}^{\infty} b_n \, \sin \left( n x\right)$$
+$$S_N(t) = A_0 + \sum_{n=1}^{\infty} a_n \, \cos \left( \omega_n t\right) + \sum_{n=1}^{\infty} b_n \, \sin \left( \omega_n t\right) = \sum_{-\infty}^{\infty} c_ne^{j\omega_n t}$$
 
-.image imgs/fourier.gif _ 300
+.image imgs/fourier.gif _ 350
+
+
+* Spectrum of a signal
+
+.image imgs/spectrum.gif _ 600
 
 * Frequency domain analysis
 
